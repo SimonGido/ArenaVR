@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "ArenaVR",
+			"Path": "C:\\Users\\Gido\\Projects\\ArenaVR\\Source\\ArenaVR.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "ArenaVREditor",
+			"Path": "C:\\Users\\Gido\\Projects\\ArenaVR\\Source\\ArenaVREditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

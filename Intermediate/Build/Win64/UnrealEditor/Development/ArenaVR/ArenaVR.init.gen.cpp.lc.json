@@ -1,0 +1,13 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "c:\\users\\gido\\projects\\arenavr\\intermediate\\build\\win64\\unrealeditor\\inc\\arenavr\\arenavr.init.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\gido\\projects\\arenavr\\intermediate\\build\\win64\\arenavreditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\users\\gido\\projects\\arenavr\\intermediate\\build\\win64\\unrealeditor\\development\\arenavr\\definitions.arenavr.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
