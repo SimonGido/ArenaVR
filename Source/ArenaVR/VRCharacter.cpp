@@ -5,6 +5,8 @@
 
 #include "Kismet/GameplayStatics.h"
 
+
+
 // Sets default values
 AVRCharacter::AVRCharacter()
 {
@@ -16,7 +18,6 @@ AVRCharacter::AVRCharacter()
 	static ConstructorHelpers::FObjectFinder<USkeletalMesh> DefaultAsset(TEXT("/Game/Assets/Hands/QK_CustomHand"));
 	m_HandMesh = DefaultAsset.Object;
 	
-
 	
 	
 	initializeCapsuleComponent();
@@ -147,4 +148,3 @@ void AVRCharacter::createMotionControllerRight()
 		MotionControllerRight->SetTrackingMotionSource(TEXT("Right"));
 	}
 }
-

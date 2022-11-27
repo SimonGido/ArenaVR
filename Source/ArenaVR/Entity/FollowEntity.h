@@ -19,6 +19,7 @@ class ARENAVR_API AFollowEntity : public ABaseEntity
 public:
 	AFollowEntity();
 
+	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
 
 public:

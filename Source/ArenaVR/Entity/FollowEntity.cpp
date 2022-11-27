@@ -3,20 +3,26 @@
 
 #include "FollowEntity.h"
 
-#include "Kismet/GameplayStatics.h"
-
-
+#include "ArenaVR/Utils/WorldUtils.h"
 
 AFollowEntity::AFollowEntity()
 {
+	bAllowTickBeforeBeginPlay = true;
+	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bStartWithTickEnabled = true;
+	PrimaryActorTick.bAllowTickOnDedicatedServer = true;
+}
+
+void AFollowEntity::BeginPlay()
+{
 	if (!m_VRCharacter)
 	{
-		TArray<AActor*> foundActors;
-		UGameplayStatics::GetAllActorsOfClass(GetWorld(), AVRCharacter::StaticClass(), foundActors);
-		
+		TArray<AVRCharacter*> foundActors;
+		WorldUtils::FindAllActors(GetWorld(), foundActors);
+
 		if (foundActors.Num() != 0)
 		{
-			m_VRCharacter = Cast<AVRCharacter>(foundActors[0]);
+			m_VRCharacter = foundActors[0];
 		}
 	}
 }
