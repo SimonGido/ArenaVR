@@ -15,6 +15,12 @@ AFollowEntity::AFollowEntity()
 
 void AFollowEntity::BeginPlay()
 {
+	
+}
+
+void AFollowEntity::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
 	if (!m_VRCharacter)
 	{
 		TArray<AVRCharacter*> foundActors;
@@ -25,12 +31,12 @@ void AFollowEntity::BeginPlay()
 			m_VRCharacter = foundActors[0];
 		}
 	}
-}
-
-void AFollowEntity::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-	followCharacter();
+	else
+	{
+		followCharacter();
+		if (Health <= 0)
+			Destroy();
+	}
 }
 
 

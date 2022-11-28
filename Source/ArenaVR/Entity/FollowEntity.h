@@ -26,6 +26,7 @@ public:
 	UPROPERTY(EditAnywhere)
 	float Speed = 5.0f;
 
+	int Health = 4;
 private:
 	void followCharacter();
 

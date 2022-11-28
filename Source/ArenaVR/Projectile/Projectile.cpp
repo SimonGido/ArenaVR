@@ -3,6 +3,8 @@
 
 #include "Projectile.h"
 
+#include "ArenaVR/Entity/FollowEntity.h"
+
 // Sets default values
 AProjectile::AProjectile()
 {
@@ -41,6 +43,11 @@ void AProjectile::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, U
 	if (OtherActor != this && OtherComponent->IsSimulatingPhysics())
 	{
 		OtherComponent->AddImpulseAtLocation(ProjectileMovementComponent->Velocity * 100.0f, Hit.ImpactPoint);
+	}
+	AFollowEntity* followEntity = Cast<AFollowEntity>(OtherActor);
+	if (followEntity)
+	{
+		followEntity->Health--;
 	}
 	Destroy();
 }
